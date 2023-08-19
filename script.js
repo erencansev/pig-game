@@ -71,7 +71,7 @@ btnHold.addEventListener("click", function () {
     scores[activePlayer] += currentScore;
     document.getElementById(`score--${activePlayer}`).textContent =
       scores[activePlayer];
-    if (scores[activePlayer] >= 100) {
+    if (scores[activePlayer] >= 10) {
       playing = false;
       diceEl.classList.add(`hidden`);
       document
@@ -85,4 +85,23 @@ btnHold.addEventListener("click", function () {
     }
   }
 });
-btnNew.addEventListener("click", init);
+btnNew.addEventListener("click", function () {
+  scores = [0, 0];
+  currentScore = 0;
+  activePlayer = 0;
+  playing = true;
+
+  score0El.textContent = 0;
+  score1El.textContent = 0;
+
+  current0El.textContent = 0;
+  current1El.textContent = 0;
+
+  diceEl.classList.add("hidden");
+
+  player0El.classList.remove("player--winner");
+  player1El.classList.remove("player--winner");
+
+  player0El.classList.add("player--active");
+  player1El.classList.remove("player--active");
+});
