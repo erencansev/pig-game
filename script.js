@@ -85,16 +85,4 @@ btnHold.addEventListener("click", function () {
     }
   }
 });
-btnNew.addEventListener("click", function () {
-  score0El.textContent = 0;
-  score1El.textContent = 0;
-
-  current0El.textContent = 0;
-  current1El.textContent = 0;
-
-  player0El.classList.remove("player--winner");
-  player1El.classList.remove("player--winner");
-
-  player0El.classList.add("player--active");
-  player1El.classList.remove("player--active");
-});
+btnNew.addEventListener("click", init);
